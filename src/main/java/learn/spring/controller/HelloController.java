@@ -15,4 +15,10 @@ public class HelloController {
         return "hello";
     }
 	
+	@RequestMapping(path = "/welcome", method = RequestMethod.GET)
+    public String hello2(@RequestParam("name") String name, Model model) {
+        model.addAttribute("response", name);
+        return "welcome";
+    }
+	
 }
